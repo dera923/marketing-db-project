@@ -1,0 +1,63 @@
+# データ生成の設定
+dataset:
+  users:
+    count: 100000  # 10万ユーザー
+    output: "data/users.csv"
+    parquet_output: "data/users.parquet"
+  web_events:
+    count: 1000000  # 100万イベント
+    output: "data/web_events.csv"
+    parquet_output: "data/web_events.parquet"
+  sales:
+    count: 200000  # 20万件の売上
+    output: "data/sales.csv"
+    parquet_output: "data/sales.parquet"
+
+# データ特性の設定
+parameters:
+  # ユーザー属性の分布
+  user:
+    age_min: 18
+    age_max: 80
+    gender_distribution:
+      male: 0.48
+      female: 0.50
+      other: 0.02
+    member_status:
+      - regular
+      - premium
+      - gold
+      - platinum
+    regions:
+      - 北海道
+      - 東北
+      - 関東
+      - 中部
+      - 関西
+      - 中国
+      - 四国
+      - 九州
+      - 沖縄
+  
+  # イベントタイプの分布
+  event:
+    types:
+      - page_view
+      - click
+      - search
+      - add_to_cart
+      - checkout
+      - purchase
+    
+  # 売上カテゴリの分布
+  sales:
+    categories:
+      - 衣料品
+      - 食品
+      - 家電
+      - 書籍
+      - 雑貨
+      - 美容品
+      - スポーツ用品
+    price_min: 500
+    price_max: 50000

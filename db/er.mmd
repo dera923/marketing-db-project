@@ -1,0 +1,38 @@
+erDiagram
+    USERS ||--o{ WEB_EVENTS : "actions"
+    USERS ||--o{ SALES : "purchases"
+    
+    USERS {
+        int user_id PK
+        string email
+        string first_name
+        string last_name
+        int age
+        string gender
+        string region
+        string membership_status
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    WEB_EVENTS {
+        int event_id PK
+        int user_id FK
+        string session_id
+        string event_type
+        string page_url
+        string referrer_url
+        string user_agent
+        string ip_address
+        timestamp event_time
+    }
+    
+    SALES {
+        int sale_id PK
+        int user_id FK
+        int product_id
+        string product_category
+        decimal amount
+        int quantity
+        timestamp sale_date
+    }
